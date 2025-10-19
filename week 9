@@ -1,0 +1,93 @@
+#include<iostream> 
+using namespace std; 
+class shape 
+{ 
+public: 
+virtual void draw() 
+{ 
+cout<<"Draw a generic shape"<<endl; 
+} 
+}; 
+class circle:public shape 
+{ 
+public: 
+ 
+void draw() override 
+{ 
+cout<<"drawing a circle"<<endl; 
+} 
+}; 
+class rectangle:public 
+shape 
+{ 
+public: 
+void draw() override 
+{ 
+cout<<"drawing a rectangle"<<endl; 
+} 
+}; 
+class triangle:public 
+shape 
+{ 
+public: 
+void draw() override 
+{ 
+cout<<"drawing a triangle"<<endl; 
+} 
+}; 
+int main() 
+{ 
+cout<<"Roll no:24B11AI377"<<endl;
+shape* shapePtr; 
+circle c; 
+shapePtr=&c; 
+shapePtr->draw(); 
+rectangle r; 
+shapePtr=&r; 
+shapePtr->draw(); 
+triangle t; 
+shapePtr=&t; 
+shapePtr->draw(); 
+shape s; 
+shapePtr=&s; 
+shapePtr->draw(); 
+return 0; 
+} 
+
+//
+
+#include <iostream> 
+using namespace std; 
+class Animal { 
+public: 
+virtual void makeSound() { 
+cout << "Animal makes a sound" << endl; 
+} 
+}; 
+class Dog : public Animal { 
+public: 
+void makeSound() override { 
+cout << "Dog barks" << endl; 
+} 
+}; 
+ 
+class Cat : public Animal { 
+public: 
+void makeSound() override { 
+cout << "Cat meows" << endl; 
+} 
+}; 
+int main() { 
+Animal* animalPtr; 
+Dog d; 
+Cat c; 
+animalPtr = &d; 
+animalPtr->makeSound(); 
+animalPtr = &c; 
+animalPtr->makeSound(); 
+return 0; 
+} 
+
+
+
+int main()
