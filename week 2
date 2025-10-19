@@ -1,0 +1,45 @@
+#include <iostream> 
+#include <cstdlib> 
+using namespace std; 
+// Global variable  
+// Namespace declarations 
+namespace N1  
+{     
+} 
+namespace N2  
+{    
+} 
+void fun() 
+{    
+int a = 8;
+ int a =4;
+ cout << "Fun A : " << a << " " << ::b << endl;  // local a, global b 
+} 
+int main()  
+{ 
+    system(“color F0”); 
+    { 
+        cout << "Inner A : " << a << endl; 
+    }
+cout << "Outer B : " << b << endl; 
+    // Using fully qualified names 
+    cout << "Name space 1 : " << N1::a << endl; 
+    cout << "Name space 2 : " << N2::a << endl; 
+    return 0; 
+}
+////
+#include <iostream> 
+using namespace std; 
+inline int square(int x) { 
+return x * x; 
+} 
+inline int max(int a, int b) { 
+return (a > b) ? a : b; 
+} 
+int main() { 
+int num1 = 3, num2 = 4; 
+cout << "Square of " << num1 << " = " << square(num1) << endl; 
+cout << "Square of " << num2 << " = " << square(num2) << endl; 
+cout << "Maximum of " << num1 << " and " << num2 << " = " << max(num1, num2) << endl; 
+return 0; 
+}
