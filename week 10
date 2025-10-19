@@ -1,0 +1,92 @@
+#include<iostream> 
+using namespace std; 
+template<typename T> 
+T mymax(T x, T y) { 
+return (x > y) ? x : y; 
+} 
+template<typename T> 
+void swapValues(T &a,T&b) { 
+T temp = a; 
+a = b; 
+b = temp; 
+} 
+int main() { 
+cout<<"Rollno:24B11AI377"<<endl;
+cout << "Max of 3 and 7: " << mymax<int>(3, 7) << endl; 
+cout << "Max of 3.0 and 7.0: " << mymax<double>(3.0, 7.0) << endl; 
+cout << "Max of 'g' and 'e': " << mymax<char>('g', 'e') << endl; 
+int a = 10, b = 20; 
+cout << "\nBefore swap : a = " << a << ", b = " << b << endl; 
+swapValues(a, b);
+cout << "After swap : a = " << a << ", b = " << b << endl; 
+double c = 15.0, d = 20.0; 
+cout << "\nBefore swap : c = " << c << ", d = " << d << endl; 
+swapValues(c, d); 
+cout << "After swap : c = " << c << ", d = " << d << endl; 
+char e = 'A', f = 'B'; 
+cout << "\nBefore swap : e = " << e << ", f = " << f << endl; 
+swapValues(e, f); 
+cout << "After swap : e = " << e << ", f = " << f << endl; 
+return 0; 
+} 
+
+//
+
+#include<iostream> 
+using namespace std; 
+template <class T> 
+class calculator 
+{ 
+private: 
+T num1; 
+T num2; 
+public: 
+calculator(T n1,T n2)
+{ 
+num1=n1; 
+num2=n2; 
+}
+T add() 
+{  
+return num1+num2;
+}
+T subtract() 
+{ 
+return num1-num2; 
+} 
+T multiply() 
+{ 
+return num1*num2; 
+} 
+T divide() 
+{ 
+if(num2!=0) 
+return num1/num2; 
+else 
+{ 
+cout<<"Error!Division by zero."<<endl; 
+} 
+} 
+}; 
+int main() 
+{ 
+calculator<int> intcalc(10,5); 
+cout<<"Int calculation:"<<endl; 
+cout<<"Addition = "<<intcalc.add()<<endl; 
+cout<<"subraction = "<<intcalc.subtract()<<endl; 
+cout<<"Multiplication = "<<intcalc.multiply()<<endl; 
+cout<<"Division = "<<intcalc.divide()<<endl; 
+cout<<" "<<endl; 
+calculator<double> doublecalc(11.5,5.5); 
+cout<<"double calculation:"<<endl; 
+cout<<"Addition = "<<doublecalc.add()<<endl; 
+cout<<"subraction = "<<doublecalc.subtract()<<endl; 
+cout<<"Multiplication = "<<doublecalc.multiply()<<endl;
+cout<<"Division = "<<doublecalc.divide()<<endl; 
+return 0;
+} 
+
+
+
+
+ 
