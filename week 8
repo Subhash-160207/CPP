@@ -1,0 +1,75 @@
+#include <iostream> 
+using namespace std; 
+  class Student { 
+      private: 
+            string name; 
+           int age;
+          public: 
+             void setData(string n, int a){ 
+          name = n; 
+        age = a; 
+                  } 
+  void display(){ 
+  cout << "Name: " << name << " age: " << age << endl; 
+} 
+}; 
+ int main(){ 
+   Student s1; 
+   s1.setData("Alice", 20); 
+   s1.display(); 
+   Student *ptr; 
+    ptr = &s1; 
+   ptr->display(); 
+ Student *ptr2 = new Student; 
+ ptr2->setData("Bob", 22); 
+ ptr2->display(); 
+delete ptr2; 
+ return 0; 
+ }
+
+///
+
+#include <iostream>                                            
+using namespace std; 
+ class A { 
+public:                       
+  A() {
+cout <<"A Constructor\n";
+}  
+     ~A() {
+cout <<"A Destructor\n";
+} 
+  void show(){ 
+  cout<<"Function of A"<<endl; 
+      } 
+        }; 
+   class B : virtual public A{ 
+     public: 
+  B() { cout <<"B Constructor\n";}  
+  ~B() { cout << "B Destructor\n";} 
+                }; 
+class C : virtual public A{ 
+     public: 
+   C() 
+{
+cout <<"C Constructor\n";
+}  
+    ~C() { cout << "C Destructor\n";} 
+                }; 
+ class D : public B, public C
+{ 
+      public: 
+   D() {
+cout <<"D Constructor\n";}  
+    ~D() { cout << "D Destructor\n";} 
+              }; 
+              int main(){
+ D obj; 
+ obj.show(); 
+ return 0; 
+  }
+
+
+
+
+
